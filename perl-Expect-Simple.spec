@@ -1,8 +1,8 @@
 %define realname   Expect-Simple
 
 Name:		perl-%{realname}
-Version:    0.02
-Release:    %mkrel 2
+Version:    0.03
+Release:    %mkrel 1
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:    Perl wrapper around the Expect module  
