@@ -8,6 +8,7 @@ Group:		Development/Perl
 Summary:    Perl wrapper around the Expect module  
 Source0:    http://search.cpan.org/CPAN/authors/id/D/DJ/DJERIUS/%{realname}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{realname}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel perl-Expect 
 BuildArch:      noarch
 
