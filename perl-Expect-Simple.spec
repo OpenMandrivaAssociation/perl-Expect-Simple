@@ -1,7 +1,7 @@
 %define realname   Expect-Simple
 
 Name:		perl-%{realname}
-Version:    0.03
+Version:    0.04
 Release:    %mkrel 1
 License:	GPL or Artistic
 Group:		Development/Perl
