@@ -1,16 +1,19 @@
-%define realname   Expect-Simple
+%define upstream_name    Expect-Simple
+%define upstream_version 0.04
 
-Name:		perl-%{realname}
-Version:    0.04
-Release:    %mkrel 2
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Perl wrapper around the Expect module  
-Source0:    http://search.cpan.org/CPAN/authors/id/D/DJ/DJERIUS/%{realname}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl-devel perl-Expect 
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/D/DJ/DJERIUS/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	perl-Expect 
 BuildArch:      noarch
+BuildRoot:	    %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Expect::Simple is a wrapper around the Expect module which should suffice for 
@@ -18,7 +21,7 @@ simple applications. It hides most of the Expect machinery; the Expect object
 is available for tweaking if need be.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -39,4 +42,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
