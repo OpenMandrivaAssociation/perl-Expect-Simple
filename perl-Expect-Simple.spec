@@ -1,15 +1,13 @@
 %define upstream_name    Expect-Simple
-%define upstream_version 0.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.04
+Release:	6
 
 Summary:	Perl wrapper around the Expect module  
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Expect-Simple
-Source0:	https://cpan.metacpan.org/authors/id/D/DJ/DJERIUS/Expect-Simple-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DJ/DJERIUS/Expect-Simple-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ simple applications. It hides most of the Expect machinery; the Expect object
 is available for tweaking if need be.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -44,9 +42,7 @@ rm -rf %{buildroot}%{perl_vendorarch}
 %changelog
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.40.0-1mdv2010.0
 + Revision: 405962
-- rebuild using %%perl_convert_version
-
-* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.04-2mdv2009.0
+- rebuild using %0.04 Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.04-2mdv2009.0
 + Revision: 268505
 - rebuild early 2009.0 package (before pixel changes)
 
